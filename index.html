@@ -14,31 +14,20 @@
 		<!-- css end here  -->
 	</head>
 	<body>
-		<header>
-			<h1>my news portal</h1>
+		<header class="container">
 			<!-- pic and news portal start here  -->
-			<nav class="navbar navbar-light bg-light m-2">
+			<nav class="navbar navbar-light bg-light mx-3">
 				<div class="container-fluid">
-					<a class="navbar-brand">
-						<button class="btn btn-success px-3 mx-3 " type="submit">
-							News</button
-						>Portal</a
-					>
-					<button class="btn btn-outline-success" type="submit">
-						<img src="" alt="" />
-					</button>
+					<a class="navbar-brand btn mx-3 ">News Portal </a>
+					<span class="mx-3 text-start "></span>
+					<a class="navbar-brand "><img class="rounded-circle" id="imageid" src="images/pic for git hub.jpg" alt=""></a>
 					<form class="d-flex">
-						<button
-							class="btn btn-outline-success px-3 mx-3"
-							type="submit"
-						>
-							News
+						
+						<button class="btn btn-outline-primary mx-3" >
+							<a href="index.html">News</a> 
 						</button>
-						<button
-							class="btn btn-outline-success px-3 mx-3"
-							type="submit"
-						>
-							Block
+						<button class="btn btn-outline-primary mx-3" >
+							<a class="text-decoration-none" href="blog.html"> Blog</a>
 						</button>
 					</form>
 				</div>
@@ -73,19 +62,17 @@
 
 			<div class="catagoryButtonDiv"></div>
 		</header>
-		<main class="">
+		<main class="container">
 			<!-- modal section start here  -->
 
-			<section class="modal-section ">
+			<section class="modal-section">
 				<!-- Button trigger modal -->
 				<button
 					type="button"
 					class="btn btn-primary"
 					data-bs-toggle="modal"
 					data-bs-target="#newsDetails"
-				>
-					
-				</button>
+				></button>
 
 				<!-- Modal -->
 				<div
@@ -100,10 +87,7 @@
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5
-									class="modal-title"
-									id="newsDetailsLabel"
-								>
+								<h5 class="modal-title" id="newsDetailsLabel">
 									Modal title
 								</h5>
 								<button
@@ -122,7 +106,7 @@
 								>
 									Close
 								</button>
-								<button type="button" class="btn btn-primary ">
+								<button type="button" class="btn btn-primary">
 									Understood
 								</button>
 							</div>
