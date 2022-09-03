@@ -2,10 +2,18 @@ const categoryid = 1;
 
 const loadNews = async (categoryid) => {
 	const url = `https://openapi.programming-hero.com/api/news/category/${categoryid}`;
-	console.log(url);
+	
+
+	try {
+		console.log(url);
 	const res = await fetch(url);
 	const data = await res.json();
 	displayNews(data.data);
+	}
+	catch (error) {
+		console.log(error);
+	}
+	
 	
 };
 
@@ -101,9 +109,16 @@ loadNews();
 
 const loadCategory = async () => {
 	const url = "https://openapi.programming-hero.com/api/news/categories";
-	const res = await fetch(url);
+	
+
+	try {
+		const res = await fetch(url);
 	const data = await res.json();
 	displayCategory(data.data.news_category);
+	}
+	catch {
+		console.log(error);
+	}
 };
 const displayCategory = (categories) => {
 	const categoriesul = document.getElementById("catagoryButtonid");
@@ -125,9 +140,15 @@ loadCategory();
 
 const loadDetails = async (loadDetail) => {
 	const url2 = `https://openapi.programming-hero.com/api/news/${loadDetail}`;
-	const res = await fetch(url2);
-	const data = await res.json();
-	displayDetails(data.data[0]);
+	
+	try {
+		const res = await fetch(url2);
+		const data = await res.json();
+		displayDetails(data.data[0]);	
+	}
+	catch {
+		console.log(error);
+	}
 };
 
 const displayDetails = (detail) => {
@@ -149,8 +170,7 @@ const displayDetails = (detail) => {
 	
 	</div>
 	`;
-	// news.forEach((detail) => {
-	// 	console.log(detail);
+	
 };
 
 loadNews("01");
