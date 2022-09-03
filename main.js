@@ -19,7 +19,7 @@ const displayNews = (news) => {
 		newsoneDiv.classList.add("m-3");
 
 		newsoneDiv.innerHTML = `
-                        <div class="row g-0">
+                        <div class="row g-0 border rounded ">
                         <div class="col-md-4 ">
                         <img   src="${
 							newsone.image_url
@@ -98,10 +98,10 @@ const displayCategory = (categories) => {
 	categories.forEach((category) => {
 		console.log(category);
 		const liTag = document.createElement("li");
-		liTag.classList.add("nav-item");
+		liTag.classList.add("nav-item", "mx-3" ,"btn-primary");
 		liTag.innerHTML = `
                 
-                <a onclick="loadNews('${category.category_id}')" class="nav-link btn" aria-current="page" href="#">${category.category_name}</a>
+                <a onclick="loadNews('${category.category_id}')" class="nav-link btn btn-outline-primary " aria-current="page" href="#">${category.category_name}</a>
                 `;
 
 		categoriesul.appendChild(liTag);
@@ -119,8 +119,23 @@ const loadDetails = async (loadDetail) => {
 
 const displayDetails = (detail) => {
 	console.log(detail.title);
-	const newContainerDiv = document.getElementById("newContainerDiv");
-
+	const newsDetailsModalid = document.getElementById("newsDetailsLabel");
+	const newsDetailsModalBbodyid = document.getElementById('modalBodyid');
+	
+	newsDetailsModalid.innerText = detail.title;
+	newsDetailsModalBbodyid.innerHTML = `
+	<div>
+		<img class="img-fluid" src="${detail.image_url}" alt="" />
+	
+	</div>
+	<div>
+	<p>${detail.details}</p>
+	<p>${detail.total_view}</p>
+	<p>${detail.rating.number}</p>
+	<p>${detail.rating.badge}</p>
+	
+	</div>
+	`;
 	// news.forEach((detail) => {
 	// 	console.log(detail);
 };
