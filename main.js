@@ -6,11 +6,12 @@ const loadNews = async (categoryid) => {
 	const res = await fetch(url);
 	const data = await res.json();
 	displayNews(data.data);
+	
 };
 
 const displayNews = (news) => {
 	const newContainerDiv = document.getElementById("newContainerDiv");
-
+	newContainerDiv.innerHTML = '';
 	console.log(news);
 	news.forEach((newsone) => {
 		console.log(newsone);
@@ -110,7 +111,7 @@ const displayCategory = (categories) => {
 	categories.forEach((category) => {
 		console.log(category);
 		const liTag = document.createElement("li");
-		liTag.classList.add("nav-item", "mx-3" ,"btn-primary");
+		liTag.classList.add("nav-item", "mx-3", "active", "btn-primary");
 		liTag.innerHTML = `
                 
                 <a onclick="loadNews('${category.category_id}')" class="nav-link btn btn-outline-primary " aria-current="page" href="#">${category.category_name}</a>
@@ -151,6 +152,8 @@ const displayDetails = (detail) => {
 	// news.forEach((detail) => {
 	// 	console.log(detail);
 };
+
+loadNews("01");
 // {_id: '0282e0e58a5c404fbd15261f11c2ab6a', others_info: {…}, category_id: '01', rating: {…}, total_view: 488, …}
 // author: {name: 'Jimmy Dane', published_date: '2022-08-24 17:27:34', img: 'https://images.unsplash.com/photo-1633332755192-72…HxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80'}
 // category
