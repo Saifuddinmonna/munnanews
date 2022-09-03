@@ -39,7 +39,7 @@ const displayNews = (news) => {
 					<div class="mx-3">
 						<small class="text-muted">
 				
-						<div class="d-flex align-items-around">
+						<div class="d-flex justify-content-evenly align-items-around">
 							<div class="mx-1 px-1 p-1">
 								<span id="img-span" >
 							
@@ -52,17 +52,29 @@ const displayNews = (news) => {
 								<p> ${newsone.author.published_date}</p>
 								</span>
 							</div>
+							<div class="mx-4 p-4">
+								<p>
+								<i class="fa-regular fa-eye"></i> &nbsp ${newsone.total_view}
+								</p>
+							</div>
+							<div class="mx-2 p-4">
+							 ${newsone.rating.number}
 							
-						</div>
-						
-				
-						<div>
+							</div>
+							
+							<div>
 								<button onclick="loadDetails('${
 									newsone._id
 								}')" class="btn btn-primary" data-bs-toggle="modal"
 								data-bs-target="#newsDetails"> Show Details</button>
+							</div>
 				
 						</div>
+							
+						</div>
+						
+				
+						
 				
 				
 						</small>
