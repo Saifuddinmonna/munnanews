@@ -1,46 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My News</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
-       
-    <header>
-       <h1> my news portal</h1>
-       <!-- nav start from here  -->
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <ul id="catagoryButtonid" class="navbar-nav m-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
-                
-              </ul>
-              
-            </div>
-          </div>
-          </nav>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>My News</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
 
-       <div class="catagoryButtonDiv">
+		<!-- css added here  -->
+		<link rel="stylesheet" href="main.css" />
+		<!-- css end here  -->
+	</head>
+	<body>
+		<header>
+			<h1>my news portal</h1>
+			<!-- pic and news portal start here  -->
+			<nav class="navbar navbar-light bg-light m-2">
+				<div class="container-fluid">
+					<a class="navbar-brand">
+						<button class="btn btn-success px-3 mx-3" type="submit">
+							News</button
+						>Portal</a
+					>
+					<button class="btn btn-outline-success" type="submit">
+						<img src="" alt="" />
+					</button>
+					<form class="d-flex">
+						<button
+							class="btn btn-outline-success px-3 mx-3"
+							type="submit"
+						>
+							News
+						</button>
+						<button
+							class="btn btn-outline-success px-3 mx-3"
+							type="submit"
+						>
+							Block
+						</button>
+					</form>
+				</div>
+			</nav>
 
+			<!-- pic and news portal end here  -->
+			<!-- nav start from here  -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarTogglerDemo01"
+						aria-controls="navbarTogglerDemo01"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div
+						class="collapse navbar-collapse"
+						id="navbarTogglerDemo01"
+					>
+						<ul
+							id="catagoryButtonid"
+							class="navbar-nav m-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center"
+						></ul>
+					</div>
+				</div>
+			</nav>
 
-       </div>
-    </header>    
-    <main class="">
-        <section>
-                <div id="newContainerDiv">
-                  <h3>this is news container div</h3>
+			<div class="catagoryButtonDiv"></div>
+		</header>
+		<main class="">
+			<!-- modal section start here  -->
 
-                </div>
-        </section>
-    </main>
-    <!-- js added here  -->
-    <script src="main.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" ></script>
-  </body>
+			<section class="modal-section">
+				<!-- Button trigger modal -->
+				<button
+					type="button"
+					class="btn btn-primary"
+					data-bs-toggle="modal"
+					data-bs-target="#newsDetails"
+				>
+					Launch static backdrop modal
+				</button>
+
+				<!-- Modal -->
+				<div
+					class="modal fade"
+					id="newsDetails"
+					data-bs-backdrop="static"
+					data-bs-keyboard="false"
+					tabindex="-1"
+					aria-labelledby="newsDetailsLabel"
+					aria-hidden="true"
+				>
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5
+									class="modal-title"
+									id="newsDetailsLabel"
+								>
+									Modal title
+								</h5>
+								<button
+									type="button"
+									class="btn-close"
+									data-bs-dismiss="modal"
+									aria-label="Close"
+								></button>
+							</div>
+							<div class="modal-body">...</div>
+							<div class="modal-footer">
+								<button
+									type="button"
+									class="btn btn-secondary"
+									data-bs-dismiss="modal"
+								>
+									Close
+								</button>
+								<button type="button" class="btn btn-primary">
+									Understood
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- modal section end here  -->
+
+			<section>
+				<div id="newContainerDiv">
+					<h3>this is news container div</h3>
+				</div>
+			</section>
+		</main>
+		<!-- js added here  -->
+		<script src="main.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
 </html>
