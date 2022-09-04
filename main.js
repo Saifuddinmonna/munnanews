@@ -20,7 +20,7 @@ const displayNews = (news) => {
 	
 	// no news found warning from here
 	const nonews = document.getElementById("nonewsid");
-	console.log( 'thist lenght' ,newContainerDiv.length);
+	console.log( 'thist lenght' ,newContainerDiv.innerHTML.length);
 	
 	if (newContainerDiv.length  === 0) {
 		nonews.classList.remove('d-none');
@@ -61,7 +61,7 @@ const displayNews = (news) => {
 					<div class="mx-3">
 						<small class="text-muted">
 				
-						<div class="d-flex justify-content-evenly align-items-around">
+						<div class="d-flex flex-wrap justify-content-evenly align-items-around">
 							<div class="mx-1 px-1 p-1">
 								<span id="img-span" >
 							
@@ -123,6 +123,7 @@ const displayNews = (news) => {
                 `;
 
 		newContainerDiv.appendChild(newsoneDiv);
+		
 	});
 	spinertoggle(false);
 };
@@ -220,7 +221,7 @@ const spinertoggle = (lodding) => {
 		lodersection.classList.remove("d-none");
 	} else {
 		lodersection.classList.add("d-none");
-		console.log(lodding);
+		
 	}
 };
 
