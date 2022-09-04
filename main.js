@@ -58,7 +58,7 @@ const displayNews = (news) => {
 						</div>
 						
 					<div>
-					<div class="mx-3">
+					<div class="mx-3 ">
 						<small class="text-muted">
 				
 						<div class="d-flex flex-wrap justify-content-evenly align-items-around">
@@ -200,7 +200,8 @@ const displayDetails = (detail) => {
 	</div>
 	<div>
 	<p>${detail.details}</p>
-	<p>${detail.total_view}</p>
+	<p>${detail.author.name ? detail.author.name : "No Author Name Available"}</p>
+	<p>${detail.total_view ? detail.total_view : "Total view Not available" }</p>
 	<p>${detail.rating.number}</p>
 	<p>${detail.rating.badge}</p>
 	
