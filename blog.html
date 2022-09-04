@@ -115,26 +115,26 @@
 					<p>
 						When and when not to use the arrow function
 
-An arrow function is also known as the fat arrow function. It is a new feature introduced in ES6 that is a more concise syntax for writing function expressions. Both regular JavaScript functions and arrow functions work in a similar manner but there are some differences between them. Let's see the differences below: -	
+						k in a similar manner but there are some differences between them. Let's see the differences below: -	
 					</p>
 					<p>
 						Syntax
-Arguments binding
-Use of this keyword
-Using a new keyword	
+						Arguments binding
+						Use of this keyword
+						Using a new keyword	
 					</p>
 					<p>
 						1) Syntax:
-A programmer can get the same result as regular functions by writing a few lines of code using arrow functions.
+						A programmer can get the same result as regular functions by writing a few lines of code using arrow functions.
 
-Curly brackets are not required if only one expression is present.
+						Curly brackets are not required if only one expression is present.
 
-// Regular function ES5:
-var add = function(a, b) {  return a + b;};
-// Arrow function ES6
-let add = (a, b) => { return a + b};
-//or
-let add = (a, b) => a + b;	
+						// Regular function ES5:
+						var add = function(a, b) {  return a + b;};
+						// Arrow function ES6
+						let add = (a, b) => { return a + b};
+						//or
+						let add = (a, b) => a + b;	
 					</p>
 					<p>
 						<h4>
@@ -142,32 +142,32 @@ let add = (a, b) => a + b;
 						</h4>	
 						arguments object inside the regular functions contains the list of arguments.
 
-// Object with Regular function
-let showData = {
-    showArg: function(){
-      console.log(arguments);
-    }  
-}
-showData.showArg(1,2,3); // output {0:1,1:2,2:3}
+						// Object with Regular function
+						let showData = {
+						showArg: function(){
+						console.log(arguments);
+						}  
+						}
+						showData.showArg(1,2,3); // output {0:1,1:2,2:3}
 					</p>
 					<p>
 						The arrow function, on the opposite, doesn’t define arguments i.e. they do not have arguments binding.
 
-// Object with Arrow function
-let showData = {
-    showArg: ()=>console.log(arguments);
-}
-showData.showArg(1,2,3); 
-// Uncaught ReferenceError: arguments is not defined
+						// Object with Arrow function
+						let showData = {
+						showArg: ()=>console.log(arguments);
+						}
+						showData.showArg(1,2,3); 
+						// Uncaught ReferenceError: arguments is not defined
 					</p>
 					<p>
 						But you can easily access the arrow function arguments using a rest parameter ...args.
 
-// using rest parameters
-let showData = {
-    showArg: (...args)=>console.log(args);
-}
-myFunc.showArgs(1, 2, 3, 4); // [1, 2, 3, 4]	
+						// using rest parameters
+						let showData = {
+						showArg: (...args)=>console.log(args);
+						}
+						myFunc.showArgs(1, 2, 3, 4); // [1, 2, 3, 4]	
 					</p>
 
 
@@ -181,14 +181,14 @@ myFunc.showArgs(1, 2, 3, 4); // [1, 2, 3, 4]
 					<p>
 						Inside of a regular JavaScript function, this value is dynamic. The dynamic context means that the value of this depends on how the function is invoked.
 						let name ={ 
-     fullName:'abc',
-     printInRegular: function(){
-        console.log(`My Name is ${this.fullName}`);
-     },       
-     printInArrow:()=>console.log(`My Name is ${this.fullName}`)
-  } 
-  name.printInRegular();   // My Name is abc
-  name.printInArrow();     // My Name is undefined
+						fullName:'abc',
+						printInRegular: function(){
+							console.log(`My Name is ${this.fullName}`);
+						},       
+						printInArrow:()=>console.log(`My Name is ${this.fullName}`)
+						} 
+						name.printInRegular();   // My Name is abc
+						name.printInArrow();     // My Name is undefined
 
 					</p>
 					<p>
@@ -198,17 +198,17 @@ myFunc.showArgs(1, 2, 3, 4); // [1, 2, 3, 4]
 					<p>
 						The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function which means No matter how or where being executed, this value inside of an arrow function always equals this value from the outer function.
 
-const myObject = {
-  myMethod(items) {
-   console.log(this); // logs myObject 
-   const callback = () => {
-    console.log(this); // this takes value from myMethod(outer func)    
-   };
-   items.forEach(callback);
-  }
-};
+						const myObject = {
+						myMethod(items) {
+						console.log(this); // logs myObject 
+						const callback = () => {
+						console.log(this); // this takes value from myMethod(outer func)    
+						};
+						items.forEach(callback);
+						}
+						};
 
-myObject.myMethod([1, 2, 3]);
+						myObject.myMethod([1, 2, 3]);
 
 					</p>
 					<p>
@@ -222,21 +222,16 @@ myObject.myMethod([1, 2, 3]);
 
 						Regular functions are constructible and callable. They can be called using the new keyword.
 
-function Car(color) {
-  this.color = color;
-}
 
-const redCar = new Car('red');
-redCar instanceof Car; // => true
 					</p>
 					<p>
 						But, the arrow functions are only callable and not constructible, i.e., arrow functions can never be used as constructor functions.
 
-const Car = (color) => {
-  this.color = color;
-};
+						const Car = (color) => {
+						this.color = color;
+						};
 
-const redCar = new Car('red'); // TypeError: Car is not a constructor
+						const redCar = new Car('red'); // TypeError: Car is not a constructor
 
 
 					</p>
@@ -428,15 +423,15 @@ const redCar = new Car('red'); // TypeError: Car is not a constructor
 
 						.forEach(), is used to execute the same code on every element in an array but does not change the array and it returns undefined.
 
-Example:
-In the example below we would use .forEach() to iterate over an array of food and log that we would want to eat each of them.
+						Example:
+						In the example below we would use .forEach() to iterate over an array of food and log that we would want to eat each of them.
 
-let food = ['mango','rice','pepper','pear'];
-food.forEach(function(foodItem){ console.log('I want to eat '+foodItem);
-});
-Running this on your console;
+						let food = ['mango','rice','pepper','pear'];
+						food.forEach(function(foodItem){ console.log('I want to eat '+foodItem);
+						});
+						Running this on your console;
 
-forEach result
+						forEach result
 					</p>
 					<p>
 
@@ -448,16 +443,16 @@ forEach result
 					<p>
 						.map() executes the same code on every element in an array and returns a new array with the updated elements.
 
-Example:
-In the example below we would use .map to iterate over the elements of the cost array and divide each element by 10, then assign our new array containing the new cost to the variable newCost.
+						Example:
+						In the example below we would use .map to iterate over the elements of the cost array and divide each element by 10, then assign our new array containing the new cost to the variable newCost.
 
-let cost = [100,400,300,700];
-let newCost = cost.map(function(costItem){ return costItem / 10;
-});
-console.log(newCost);
-Running this on your console;
+						let cost = [100,400,300,700];
+						let newCost = cost.map(function(costItem){ return costItem / 10;
+						});
+						console.log(newCost);
+						Running this on your console;
 
-map result
+						map result
 
 					</p>
 					<p>
@@ -470,16 +465,16 @@ map result
 
 						.filter() checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria.
 
-Example:
-In the example below we would use .filter to return values that are less than 200.
+						Example:
+						In the example below we would use .filter to return values that are less than 200.
 
-let cost = [100,400,50,40,700];
-let smallCost = cost.filter(function(costItem){ return costItem < 200
-});
-console.log(smallCost);
-Running this on your console;
+						let cost = [100,400,50,40,700];
+						let smallCost = cost.filter(function(costItem){ return costItem < 200
+						});
+						console.log(smallCost);
+						Running this on your console;
 
-filter result
+						filter result
 					</p>
 					<p>
 
@@ -489,8 +484,7 @@ filter result
 					</p>
 					<p>
 						What is difference between filter and find?
-Image result for different between map foreach filter and find
-The filter() method is used to filters all the elements and returns the element that matches and the element that do not match are removed. The only difference is the filter() method search through all the elements while find() method search through all the child elements only
+						nts while find() method search through all the child elements only
 
 					</p>
 					<p>

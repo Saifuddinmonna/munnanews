@@ -53,7 +53,7 @@ const displayNews = (news) => {
 						<h5 class="card-title">${newsone.title}</h5>
 						<div class="p-2 m-2">
 						  <p class="card-text">
-						  	${newsone.details.slice(0, 350)}...
+						  	${newsone.details.slice(0, 250)}...
 						  </p>
 						</div>
 						
