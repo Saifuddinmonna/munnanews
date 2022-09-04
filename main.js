@@ -20,7 +20,8 @@ const loadNews = async (categoryid) => {
 const displayNews = (news) => {
 	const newContainerDiv = document.getElementById("newContainerDiv");
 	newContainerDiv.innerHTML = '';
-	console.log(news);
+	const lenthsss = newContainerDiv.length;
+	console.log(lenthsss);
 	news.forEach((newsone) => {
 		console.log(newsone);
 		const newsoneDiv = document.createElement("div");
@@ -102,7 +103,13 @@ const displayNews = (news) => {
                 `;
 
 		newContainerDiv.appendChild(newsoneDiv);
+		
 	});
+	 spinertoggle(false);
+	
+	
+
+	
 };
 
 loadNews();
@@ -114,7 +121,8 @@ const loadCategory = async () => {
 	try {
 		const res = await fetch(url);
 	const data = await res.json();
-	displayCategory(data.data.news_category);
+		displayCategory(data.data.news_category);
+		
 	}
 	catch {
 		console.log(error);
@@ -133,7 +141,20 @@ const displayCategory = (categories) => {
                 `;
 
 		categoriesul.appendChild(liTag);
+		
 	});
+	
+};
+
+
+const spinertoggle = (lodding) => {
+	const lodersection = document.getElementById("lodersectionid");
+	if (lodding) {
+		lodersection.classList.remove("d-none");
+	} else {
+		lodersection.classList.add("d-none");
+		console.log(lodding);
+	}
 };
 
 loadCategory();
@@ -145,10 +166,12 @@ const loadDetails = async (loadDetail) => {
 		const res = await fetch(url2);
 		const data = await res.json();
 		displayDetails(data.data[0]);	
+		
 	}
 	catch {
 		console.log(error);
 	}
+	
 };
 
 const displayDetails = (detail) => {
@@ -172,6 +195,12 @@ const displayDetails = (detail) => {
 	`;
 	
 };
+
+// spinertoggler start here
+
+
+
+// spinertoggler start here 
 
 loadNews("01");
 // {_id: '0282e0e58a5c404fbd15261f11c2ab6a', others_info: {…}, category_id: '01', rating: {…}, total_view: 488, …}
