@@ -1,3 +1,6 @@
+ 
+// load news start here 
+
 const loadNews = async (categoryid) => {
 	const url = `https://openapi.programming-hero.com/api/news/category/${categoryid}`;
 
@@ -111,6 +114,12 @@ const displayNews = (news) => {
 
 loadNews();
 
+// load news end here 
+
+
+
+// category function start here 
+
 const loadCategory = async () => {
 	const url = "https://openapi.programming-hero.com/api/news/categories";
 
@@ -138,15 +147,6 @@ const displayCategory = (categories) => {
 	});
 };
 
-const spinertoggle = (lodding) => {
-	const lodersection = document.getElementById("lodersectionid");
-	if (lodding) {
-		lodersection.classList.remove("d-none");
-	} else {
-		lodersection.classList.add("d-none");
-		console.log(lodding);
-	}
-};
 
 loadCategory();
 
@@ -161,6 +161,11 @@ const loadDetails = async (loadDetail) => {
 		console.log(error);
 	}
 };
+
+// category function end here
+
+
+// modal start here 
 
 const displayDetails = (detail) => {
 	console.log(detail.title);
@@ -183,7 +188,20 @@ const displayDetails = (detail) => {
 	`;
 };
 
+// modal end here 
+
 loadNews("01");
+
 // spinertoggler start here
+
+const spinertoggle = (lodding) => {
+	const lodersection = document.getElementById("lodersectionid");
+	if (lodding) {
+		lodersection.classList.remove("d-none");
+	} else {
+		lodersection.classList.add("d-none");
+		console.log(lodding);
+	}
+};
 
 // spinertoggler start here
