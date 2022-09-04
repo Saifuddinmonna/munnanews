@@ -1,25 +1,19 @@
-const categoryid = 1;
-
 const loadNews = async (categoryid) => {
 	const url = `https://openapi.programming-hero.com/api/news/category/${categoryid}`;
-	
 
 	try {
 		console.log(url);
-	const res = await fetch(url);
-	const data = await res.json();
-	displayNews(data.data);
-	}
-	catch (error) {
+		const res = await fetch(url);
+		const data = await res.json();
+		displayNews(data.data);
+	} catch (error) {
 		console.log(error);
 	}
-	
-	
 };
 
 const displayNews = (news) => {
 	const newContainerDiv = document.getElementById("newContainerDiv");
-	newContainerDiv.innerHTML = '';
+	newContainerDiv.innerHTML = "";
 	const lenthsss = newContainerDiv.length;
 	console.log(lenthsss);
 	news.forEach((newsone) => {
@@ -58,13 +52,21 @@ const displayNews = (news) => {
 							</div>
 							<div class="mx-1 px-1 p-1>
 								<span ">
-								<p>${newsone.author.name} </p> 
+								<p>${
+									newsone.author.name
+										? newsone.author.name
+										: "No Author Name Available"
+								} </p> 
 								<p> ${newsone.author.published_date}</p>
 								</span>
 							</div>
 							<div class="mx-4 p-4">
 								<p>
-								<i class="fa-regular fa-eye"></i> &nbsp ${newsone.total_view}
+								<i class="fa-regular fa-eye"></i> &nbsp ${
+									newsone.total_view
+										? newsone.total_view
+										: " No View Available"
+								}
 								</p>
 							</div>
 							<div class="mx-2 p-4">
@@ -103,28 +105,20 @@ const displayNews = (news) => {
                 `;
 
 		newContainerDiv.appendChild(newsoneDiv);
-		
 	});
-	 spinertoggle(false);
-	
-	
-
-	
+	spinertoggle(false);
 };
 
 loadNews();
 
 const loadCategory = async () => {
 	const url = "https://openapi.programming-hero.com/api/news/categories";
-	
 
 	try {
 		const res = await fetch(url);
-	const data = await res.json();
+		const data = await res.json();
 		displayCategory(data.data.news_category);
-		
-	}
-	catch {
+	} catch {
 		console.log(error);
 	}
 };
@@ -141,11 +135,8 @@ const displayCategory = (categories) => {
                 `;
 
 		categoriesul.appendChild(liTag);
-		
 	});
-	
 };
-
 
 const spinertoggle = (lodding) => {
 	const lodersection = document.getElementById("lodersectionid");
@@ -161,24 +152,21 @@ loadCategory();
 
 const loadDetails = async (loadDetail) => {
 	const url2 = `https://openapi.programming-hero.com/api/news/${loadDetail}`;
-	
+
 	try {
 		const res = await fetch(url2);
 		const data = await res.json();
-		displayDetails(data.data[0]);	
-		
-	}
-	catch {
+		displayDetails(data.data[0]);
+	} catch {
 		console.log(error);
 	}
-	
 };
 
 const displayDetails = (detail) => {
 	console.log(detail.title);
 	const newsDetailsModalid = document.getElementById("newsDetailsLabel");
-	const newsDetailsModalBbodyid = document.getElementById('modalBodyid');
-	
+	const newsDetailsModalBbodyid = document.getElementById("modalBodyid");
+
 	newsDetailsModalid.innerText = detail.title;
 	newsDetailsModalBbodyid.innerHTML = `
 	<div>
@@ -193,16 +181,9 @@ const displayDetails = (detail) => {
 	
 	</div>
 	`;
-	
 };
 
+loadNews("01");
 // spinertoggler start here
 
-
-
-// spinertoggler start here 
-
-loadNews("01");
-// {_id: '0282e0e58a5c404fbd15261f11c2ab6a', others_info: {…}, category_id: '01', rating: {…}, total_view: 488, …}
-// author: {name: 'Jimmy Dane', published_date: '2022-08-24 17:27:34', img: 'https://images.unsplash.com/photo-1633332755192-72…HxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80'}
-// category
+// spinertoggler start here
