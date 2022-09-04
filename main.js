@@ -12,15 +12,30 @@ const loadNews = async (categoryid) => {
 	} catch (error) {
 		console.log(error);
 	}
+	
 };
 
 const displayNews = (news) => {
 	const newContainerDiv = document.getElementById("newContainerDiv");
+	
+	// no news found warning from here
+	const nonews = document.getElementById("nonewsid");
+	console.log( 'thist lenght' ,newContainerDiv.length);
+	
+	if (newContainerDiv.length  === 0) {
+		nonews.classList.remove('d-none');
+	}
+	else {
+		nonews.classList.add('d-none');
+	}
+
+	// no news found warning end here
+	
 	newContainerDiv.innerHTML = "";
 	const lenthsss = newContainerDiv.length;
-	console.log(lenthsss);
+	
 	news.forEach((newsone) => {
-		console.log(newsone);
+		
 		const newsoneDiv = document.createElement("div");
 
 		newsoneDiv.classList.add("m-3");
@@ -130,23 +145,26 @@ const loadCategory = async () => {
 	} catch {
 		console.log(error);
 	}
+	
 };
 const displayCategory = (categories) => {
 	const categoriesul = document.getElementById("catagoryButtonid");
 	// console.log(categories);
 	categories.forEach((category) => {
-		console.log(category);
+		
 		const liTag = document.createElement("li");
 		liTag.classList.add("nav-item", "mx-3", "active", "btn-primary");
 		liTag.innerHTML = `
                 
-                <a onclick="loadNews('${category.category_id}')" class="nav-link btn btn-outline-primary " aria-current="page" href="#">${category.category_name}</a>
+                <a onclick="loadNews('${category.category_id}'),spinertoggle(true)" class="nav-link btn btn-outline-primary " aria-current="page" href="#">${category.category_name}</a>
                 `;
 
 		categoriesul.appendChild(liTag);
+		
 	});
+	
 };
-
+	
 
 loadCategory();
 
@@ -160,6 +178,7 @@ const loadDetails = async (loadDetail) => {
 	} catch {
 		console.log(error);
 	}
+	
 };
 
 // category function end here
@@ -168,7 +187,7 @@ const loadDetails = async (loadDetail) => {
 // modal start here 
 
 const displayDetails = (detail) => {
-	console.log(detail.title);
+	
 	const newsDetailsModalid = document.getElementById("newsDetailsLabel");
 	const newsDetailsModalBbodyid = document.getElementById("modalBodyid");
 
@@ -186,6 +205,7 @@ const displayDetails = (detail) => {
 	
 	</div>
 	`;
+	
 };
 
 // modal end here 
@@ -205,3 +225,5 @@ const spinertoggle = (lodding) => {
 };
 
 // spinertoggler start here
+
+
