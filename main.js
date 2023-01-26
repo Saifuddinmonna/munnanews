@@ -17,25 +17,11 @@ const loadNews = async (categoryid) => {
 
 const displayNews = (news) => {
 	const newContainerDiv = document.getElementById("newContainerDiv");
-	
-	// no news found warning from here
-	const nonews = document.getElementById("nonewsid");
-	console.log( 'thist lenght' ,newContainerDiv.innerHTML.length);
-	
-	if (newContainerDiv.length  === 0) {
-		nonews.classList.remove('d-none');
-	}
-	else {
-		nonews.classList.add('d-none');
-	}
 
-	// no news found warning end here
-	
 	newContainerDiv.innerHTML = "";
 	const lenthsss = newContainerDiv.length;
-	
+
 	news.forEach((newsone) => {
-		
 		const newsoneDiv = document.createElement("div");
 
 		newsoneDiv.classList.add("m-3");
@@ -123,8 +109,18 @@ const displayNews = (news) => {
                 `;
 
 		newContainerDiv.appendChild(newsoneDiv);
-		
 	});
+	// no news found warning from here
+	const nonews = document.getElementById("nonewsid");
+	console.log("thist lenght", newContainerDiv.innerHTML.length);
+
+	if (newContainerDiv.childElementCount === 0) {
+		nonews.classList.remove("d-none");
+	} else {
+		nonews.classList.add("d-none");
+	}
+
+	// no news found warning end here
 	spinertoggle(false);
 };
 
